@@ -22,4 +22,5 @@ Route::group([
     'middleware' => 'auth:api'
 ], function() {
     Route::resource('characters', 'CharacterController');
+    Route::resource('monsters', 'MonstersController');
 }); 

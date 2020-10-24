@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Character;
+use App\Models\Monster;
 
-class CharacterController extends Controller
+class MonstersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        return response()->json(Character::all());
+        return response()->json(Monster::all());
     }
 
     /**
@@ -25,8 +25,7 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        $result = Character::create($request->all());
-        return response()->json($result);
+        //
     }
 
     /**
@@ -37,7 +36,7 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        return response()->json(Character::find($id));
+        //
     }
 
     /**
@@ -47,11 +46,9 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Character $character)
+    public function update(Request $request, $id)
     {
-        $character->update($request->all());
-        $character->save();
-        return response()->json($character);
+        //
     }
 
     /**
@@ -62,7 +59,6 @@ class CharacterController extends Controller
      */
     public function destroy($id)
     {
-        $del = Character::destroy($id);
-        return response()->json($del." item(s) excluído(s).");
+        //
     }
 }
